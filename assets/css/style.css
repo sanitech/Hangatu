@@ -91,10 +91,10 @@ main {
   gap: 20px;
 }
 
-ol li,
-ul li {
-  /* word-wrap: break-word; */
-  /* display: flex; */
+
+.navbar ul li {
+  white-space: nowrap;
+  display: flex;
 }
 
 .download-pdf {
@@ -258,6 +258,65 @@ li a i {
 .cont-first {
   word-wrap: break-word;
   background-color: aqua !important;
+}
+
+.form-container{
+  display: flex;
+  padding: 20px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.form-container .row{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.form-container .row label{
+  margin-bottom: 5px;
+}
+.d-flex{
+  display: flex;
+  gap: 1rem;
+}
+
+.fit-content{
+  width: fit-content !important;
+  height: fit-content !important;
+  background-color: rgb(243, 243, 243) !important;
+  color: #000 !important;
+}
+.form-container .row input{
+  background-color: rgb(215, 215, 215);
+  border: 1px solid rgb(255, 255, 255);
+  height: 2rem;
+  padding: 0 10px;
+  font-size: 17px;
+  outline: #e42343;
+}
+
+.row textarea{
+  background-color: rgb(215, 215, 215);
+
+  border: 1px solid rgb(255, 255, 255);
+  outline: #e42343;
+  font-size: 17px;
+  padding: 5px 10px;
+
+}
+.text-dark{
+  color: #000 !important;
+}
+.btn-send{
+  background-color: rgb(247, 195, 41);
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 17px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
 }
 
 @media (max-width: 912px) {

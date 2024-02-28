@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hangatu</title>
+    <link rel="stylesheet" href="assets/css/drop.css  " />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+      integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="shortcut icon"
+      href="assets/images/cropped-download__2_-removebg-preview-32x32.png"
+      type="image/x-icon"
+    />
+    <script src="assets/js/app.js" defer></script>
+    <script src="assets/js/data.js" defer></script>
+  </head>
+  <body>
+    <div class="container home">
+      <div class="sub-container">
+        <div class="cont-first"></div>
+        <div class="cont-second"></div>
+
+        <div class="main-container">
+          <nav>
+            <div class="navbar">
+              <a href="index.html"> <div class="logo">Hangatu</div></a>
+              <ul class="togglecontainer">
+                <li><a href="index.html">Home</a></li>
+                <!-- <li><a href="#about">About</a></li> -->
+                <!-- <li><a href="#contact">Contact</a></li> -->
+                <li><a href="neweso.php">Oduu</a></li>
+
+                <li class="select">
+                  <select class="lanSelector" onchange="languageHandler(event)">
+                    <option>Language <i class="bi bi-chevron-down"></i></option>
+                  </select>
+                </li>
+              </ul>
+              <li class="toggle" onclick="toggleHandler()">
+                <i class="bi bi-list"></i>
+              </li>
+            </div>
+          </nav>
+
+          <div class="hero-container">
+            <div class="hero-text-container">
+              <p>Baga gara tajaajila odeeffannoo aanaa Hangatuu dhuftan</p>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rem,
+                cumque sit facilis est nihil, nemo, sunt ipsam deleniti sapiente
+                consequatur blanditiis totam assumenda debitis voluptatibus.
+                Harum, quam! Nihil, laborum error!
+              </p>
+            </div>
+
+            <div class="cont-dot">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <div class="hero-provide-container">
+              <div class="provide-box fit-content">
+                <h3 class="text-dark">ጥያቄ</h3>
+
+                <form action="backend/question.php" method="post" enctype="multipart/form-data" class="form-container">
+
+                  <div class="d-flex">
+                    <div class="row">
+                      <label for="">ሙሎ ስም</label>
+                      <input type="text" name="name" id="name " placeholder="ስምዎ" />
+                    </div>
+                    <div class="row">
+                      <label for="">ለማንው ጥያቄው </label>
+                      <input type="text" name="know" id="name " placeholder="ስምዎ" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <label for="">ስልክ</label>
+                    <input
+                      type="text"
+                      name="phone"
+                      id="name "
+                      placeholder="+251-89122192"
+                    />
+                  </div>
+                  <div class="row">
+                    <label for="">ጥያቄ</label>
+                    <textarea name="question" id="" cols="30" rows="5"></textarea>
+                  </div>
+
+                  <input class="btn-send" type="submit" value="ጥያቄ ላክ" />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
