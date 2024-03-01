@@ -1,3 +1,11 @@
+<?php
+require('config/connection.php');
+
+
+$connect = new dbConnect();
+
+$db = $connect->dbConnection();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +25,8 @@
           <div class="logo">Hangatu</div>
         </a>
         <ul class="togglecontainer">
-          <li><a href="index.html">Home</a></li>
-          <!-- <li><a href="#about">About</a></li> -->
-          <!-- <li><a href="#contact">Contact</a></li> -->
-          <li><a href="#contact">News</a></li>
+          <li><a href="contacta.html">ጥያቄ</a></li>
+          <li><a href="newesa.php">ዜና</a></li>
 
           <li class="select">
             <select class="lanSelector" onchange="languageHandler(event)">
@@ -37,16 +43,18 @@
       <div class="cont">
         <?php
 
-        $stm = $db->prepare("SELECT * FROM news WHERE ntype = 'amhr' ORDER BY nid DESC");
+        $stm = $db->prepare("SELECT * FROM news WHERE ntype = 'amh' ORDER BY nid DESC");
         $stm->execute();
         foreach ($stm->fetchAll() as $row) {
         ?>
-          <div class="cards">
-            <h1 class="card-title"><?php echo $row['title'] ?></h1>
-            <p>
-              <?php echo $row['news'] ?>
-            </p>
-          </div>
+          <a href="news.php?id=<?php echo $row['nid'] ?>">
+            <div class="cards-news">
+              <h1 class="card-title"><?php echo $row['title'] ?></h1>
+              <p>
+                <?php echo $row['news'] ?>
+              </p>
+            </div>
+          </a>
         <?php }
         ?>
       </div>

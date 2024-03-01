@@ -25,16 +25,10 @@ $db = $connect->dbConnection();
           <div class="logo">Hangatu</div>
         </a>
         <ul class="togglecontainer">
-          <li><a href="index.html">Home</a></li>
-          <!-- <li><a href="#about">About</a></li> -->
-          <!-- <li><a href="#contact">Contact</a></li> -->
+          <li><a href="contact.html">Gaaffii</a></li>
           <li><a href="neweso.php">Oduu</a></li>
 
-          <li class="select">
-            <select class="lanSelector" onchange="languageHandler(event)">
-              <option>Language <i class="bi bi-chevron-down"></i></option>
-            </select>
-          </li>
+          
         </ul>
         <li class="toggle" onclick="toggleHandler()">
           <i class="bi bi-list"></i>
@@ -47,13 +41,15 @@ $db = $connect->dbConnection();
       <div class="cont">
         <?php
 
-        $stm = $db->prepare("SELECT * FROM news WHERE ntype = 'oro' ORDER BY nid DESC");
+        $stm = $db->prepare("SELECT * FROM news WHERE ntype = 'oro' ORDER BY nid DESC LIMIT 1");
         $stm->execute();
         foreach ($stm->fetchAll() as $row) {
+          $latestNews = $row['nid'];
         ?>
-          <div class="cards">
+          <div class="cards-news">
+            <img src="<?php echo str_replace('../', '', $row['image']) ?>" alt="" style="width: 100%; heght: 100%" />
             <h1 class="card-title"><?php echo $row['title'] ?></h1>
-            <p>
+            <p class="news-desc">
               <?php echo $row['news'] ?>
             </p>
           </div>
@@ -62,11 +58,28 @@ $db = $connect->dbConnection();
       </div>
       <div class="more">
         <h3>More</h3>
-        <ul>
-          <li><a href="#"> Ayyaana irreechaa </a></li>
-          <li><a href="#"> Ayyaana irreechaa </a></li>
-          <li><a href="#"> Ayyaana irreechaa </a></li>
-          <li><a href="#"> Ayyaana irreechaa </a></li>
+        <ul style="list-style: none;">
+          <?php
+
+          $stm = $db->prepare("SELECT * FROM news ORDER BY nid DESC LIMIT 10");
+          $stm->execute();
+          foreach ($stm->fetchAll() as $row) {
+            $id = $row['nid'];
+            $title = $row['title'];
+            $news = $row['news'];
+            if ($id == $latestNews) continue;
+          ?>
+            <li>
+              <a href="news.php?id=<?php echo $row['nid'] ?>">
+                <div class="news-card">
+                  <img src="<?php echo str_replace('../', '', $row['image']) ?>" alt="" style="width: 100%; heght: 100%" />
+                  <div class="newsinfo "><?php echo $row['news'] ?></div>
+                </div>
+              </a>
+            <li>
+            <?php }
+
+            ?>
         </ul>
       </div>
     </main>

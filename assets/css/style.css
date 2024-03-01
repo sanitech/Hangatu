@@ -1,7 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
 }
 
 :root {
@@ -16,6 +88,10 @@ h1 {
 .more h3 {
   margin-bottom: -30px;
 }
+.more{
+  position: sticky;
+  top: 0 !important;
+}
 
 @font-face {
   font-family: "poppins";
@@ -29,7 +105,7 @@ body {
   background-image: url(../images/back.jpg);
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   height: 100vh;
 }
 
@@ -87,10 +163,9 @@ main {
 .cont-header {
   display: flex;
   /* justify-content: space-between; */
-  align-items: center;
+  align-items: baseline;
   gap: 20px;
 }
-
 
 .navbar ul li {
   white-space: nowrap;
@@ -260,34 +335,34 @@ li a i {
   background-color: aqua !important;
 }
 
-.form-container{
+.form-container {
   display: flex;
   padding: 20px;
   flex-wrap: wrap;
   flex-direction: column;
 }
 
-.form-container .row{
+.form-container .row {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
 
-.form-container .row label{
+.form-container .row label {
   margin-bottom: 5px;
 }
-.d-flex{
+.d-flex {
   display: flex;
   gap: 1rem;
 }
 
-.fit-content{
+.fit-content {
   width: fit-content !important;
   height: fit-content !important;
   background-color: rgb(243, 243, 243) !important;
   color: #000 !important;
 }
-.form-container .row input{
+.form-container .row input {
   background-color: rgb(215, 215, 215);
   border: 1px solid rgb(255, 255, 255);
   height: 2rem;
@@ -296,19 +371,18 @@ li a i {
   outline: #e42343;
 }
 
-.row textarea{
+.row textarea {
   background-color: rgb(215, 215, 215);
 
   border: 1px solid rgb(255, 255, 255);
   outline: #e42343;
   font-size: 17px;
   padding: 5px 10px;
-
 }
-.text-dark{
+.text-dark {
   color: #000 !important;
 }
-.btn-send{
+.btn-send {
   background-color: rgb(247, 195, 41);
   padding: 10px 0;
   font-weight: bold;
@@ -316,9 +390,77 @@ li a i {
   border: none;
   outline: none;
   cursor: pointer;
-
 }
 
+.cards-news {
+  width: 100%;
+  backdrop-filter: blur(6px) saturate(180%);
+  -webkit-backdrop-filter: blur(6px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.87);
+  border-radius: 12px;
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  position: relative;
+  border: none;
+  box-shadow: 0px 0px 16px 5px rgba(255, 255, 255, 0.18);
+  -webkit-box-shadow: 0px 0px 16px 5px rgba(255, 255, 255, 0.18);
+  -moz-box-shadow: 0px 0px 16px 5px rgba(255, 255, 255, 0.18);
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  word-wrap: wrap;
+}
+.news-desc {
+ 
+}
+.newsinfo {
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding: 5px 8px;
+}
+
+.news-card {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  gap: 1rem;
+  background-color: #ededed;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  line-height: 20px;
+  font-size: 15px;
+  color: #000;
+}
+.subheader{
+  margin-left: 20px;
+  font-size: 16px;
+  color: #2e2e2e;
+  margin-bottom: 10px;
+}
+.note-title{
+  font-size: 17px;
+  font-weight: 600;
+  margin: 10px 0px;
+}
+.sub-holder{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap:2rem;
+  margin: 20px 0px;
+}
+.subheader-holder{
+  margin-left: 30px;
+}
+.info-section{
+  font-family: 
+  ui-sans-serif
+  system-ui
+  sans-serif
+  "Apple Color Emoji"
+  "Segoe UI Emoji"
+  "Segoe UI Symbol"
+  "Noto Color Emoji";
+}
 @media (max-width: 912px) {
   .hero-container {
     flex-direction: column;

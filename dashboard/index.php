@@ -17,7 +17,7 @@ include('header.php');
       </thead>
       <tbody class="table-border-bottom-0">
         <?php
-        $stm = $db->prepare("SELECT * FROM contact");
+        $stm = $db->prepare("SELECT * FROM contact ORDER BY cid DESC");
         $stm->execute();
         $result = $stm->fetchAll();
         // output data of each row
